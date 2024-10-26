@@ -72,19 +72,12 @@ export default function ShopLayout4({ children, navigation, data }: Props) {
 
   return (
     <div className="bg-white">
-      {/* TOP BAR SECTION */}
-      <Topbar label={topbar.label} title={topbar.title}>
-        <Topbar.Right>
-          <TopbarLanguageSelector languages={topbar.languageOptions} />
-          <TopbarSocialLinks links={topbar.socials} />
-        </Topbar.Right>
-      </Topbar>
+
 
       {/* HEADER */}
       <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={70}>
         <Header mobileHeader={MOBILE_VERSION_HEADER}>
           <Header.Logo url={header.logo} />
-
           {isFixed ? (
             <Header.CategoryDropdown>
               <CategoryList categories={header.categoryMenus} />
