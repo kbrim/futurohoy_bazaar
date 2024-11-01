@@ -19,7 +19,7 @@ import { UploadImageBox, StyledClear } from "../styles";
 
 // FORM FIELDS VALIDATION
 const VALIDATION_SCHEMA = yup.object().shape({
-  name: yup.string().required("Name required"),
+  name: yup.string().required("Nombre Requerido"),
 });
 
 // ================================================================
@@ -71,35 +71,16 @@ export default function CategoryForm(props: Props) {
                 <TextField
                   fullWidth
                   name="name"
-                  label="Name"
+                  label="Nombre"
                   color="info"
                   size="medium"
-                  placeholder="Name"
+                  placeholder="Nombre"
                   value={values.name}
                   onBlur={handleBlur}
                   onChange={handleChange}
                   helperText={touched.name && errors.name}
                   error={Boolean(touched.name && errors.name)}
                 />
-              </Grid>
-
-              <Grid item sm={6} xs={12}>
-                <TextField
-                  select
-                  fullWidth
-                  color="info"
-                  size="medium"
-                  name="parent"
-                  onBlur={handleBlur}
-                  value={values.parent}
-                  onChange={handleChange}
-                  placeholder="Parent Category"
-                  label="Select Parent Category"
-                  SelectProps={{ multiple: true }}
-                >
-                  <MenuItem value="electronics">Electronics</MenuItem>
-                  <MenuItem value="fashion">Fashion</MenuItem>
-                </TextField>
               </Grid>
 
               <Grid item xs={12}>
@@ -124,7 +105,7 @@ export default function CategoryForm(props: Props) {
 
               <Grid item sm={6} xs={12}>
                 <FormControlLabel
-                  label="Featured Category"
+                  label="Categoria Destacada"
                   control={
                     <Checkbox
                       color="info"
@@ -139,7 +120,7 @@ export default function CategoryForm(props: Props) {
 
               <Grid item xs={12}>
                 <Button variant="contained" color="info" type="submit">
-                  Save category
+                  Guardar Categoria
                 </Button>
               </Grid>
             </Grid>
