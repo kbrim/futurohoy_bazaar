@@ -38,9 +38,7 @@ const StyledChip = styled(Chip, {
 
 const STEPPER_LIST = [
   { title: "Cart", disabled: false },
-  { title: "Details", disabled: false },
-  { title: "Payment", disabled: true },
-  { title: "Review", disabled: true },
+  { title: "Details", disabled: false }
 ];
 
 export default function Steppers() {
@@ -50,15 +48,13 @@ export default function Steppers() {
   const pathname = usePathname();
 
   const handleStepChange = (step: number) => {
-    const routes = ["/cart", "/checkout", "/payment", "/orders"];
+    const routes = ["/cart", "/checkout"];
     if (routes[step]) router.push(routes[step]);
   };
 
   useEffect(() => {
     const pathToStep = {
       "/cart": 0,
-      "/orders": 3,
-      "/payment": 2,
       "/checkout": 1,
     };
 
