@@ -39,7 +39,7 @@ const StyledChip = styled(Chip, {
 const STEPPER_LIST = [
   { title: "Cart", disabled: false },
   { title: "Details", disabled: false },
-  { title: "Payment", disabled: false },
+  { title: "Payment", disabled: true },
   { title: "Review", disabled: true },
 ];
 

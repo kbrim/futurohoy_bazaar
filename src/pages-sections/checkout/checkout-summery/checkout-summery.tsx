@@ -25,27 +25,14 @@ export default function CheckoutSummary() {
   return (
     <Card sx={{ p: 3 }}>
       <ListItem mb={1} title="Subtotal" value={total} />
-      <ListItem mb={1} title="Shipping" />
-      <ListItem mb={1} title="Tax" value={0} />
-      <ListItem mb={1} title="Discount" />
+      <ListItem mb={1} title="IVA" value={0} />
+      <ListItem mb={1} title="Descuento" />
 
       <Divider sx={{ my: 2 }} />
 
       <Paragraph fontSize={25} fontWeight={600} lineHeight={1}>
         {currency(total)}
       </Paragraph>
-
-      <Stack spacing={2} mt={3}>
-        <TextField
-          placeholder="Voucher"
-          variant="outlined"
-          size="small"
-          fullWidth
-        />
-        <Button variant="outlined" color="primary" fullWidth>
-          Apply Voucher
-        </Button>
-      </Stack>
     </Card>
   );
 }

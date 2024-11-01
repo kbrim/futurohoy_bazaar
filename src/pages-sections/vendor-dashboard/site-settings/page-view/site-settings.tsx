@@ -53,10 +53,6 @@ const SiteSettingsPageView = () => {
             <GeneralForm />
           </StyledTabPanel>
 
-          <StyledTabPanel value="topbar">
-            <TopbarForm />
-          </StyledTabPanel>
-
           <StyledTabPanel value="footer">
             <FooterForm />
           </StyledTabPanel>

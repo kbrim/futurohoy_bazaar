@@ -33,11 +33,11 @@ export default function OrderConfirmationPageView() {
           src="/assets/images/illustrations/party-popper.svg"
         />
         <H1 lineHeight={1.1} mt="1.5rem">
-          Your order is completed!
+          Tu cotizacion ha sido enviada!!
         </H1>
 
         <Paragraph color="grey.800" mt="0.3rem">
-          You will be receiving confirmation email with order details.
+          Una copia de cotizacion sera enviada por correo
         </Paragraph>
 
         <StyledButton

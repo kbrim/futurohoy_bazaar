@@ -68,13 +68,6 @@ export default function ShopLayout3({
 
   return (
     <Fragment>
-      {/* TOP BAR SECTION */}
-      <Topbar label={topbar.label} title={topbar.title}>
-        <Topbar.Right>
-          <TopbarLanguageSelector languages={topbar.languageOptions} />
-          <TopbarSocialLinks links={topbar.socials} />
-        </Topbar.Right>
-      </Topbar>
 
       {/* HEADER */}
       <Sticky fixedOn={0} scrollDistance={300}>

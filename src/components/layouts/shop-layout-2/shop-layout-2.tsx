@@ -57,13 +57,6 @@ export default function ShopLayout2({ children, navbar, data }: LayoutProps) {
 
   return (
     <Fragment>
-      {/* TOP BAR AREA */}
-      <Topbar label={topbar.label} title={topbar.title}>
-        <Topbar.Right>
-          <TopbarLanguageSelector languages={topbar.languageOptions} />
-          <TopbarSocialLinks links={topbar.socials} />
-        </Topbar.Right>
-      </Topbar>
 
       {/* HEADER */}
       <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={70}>

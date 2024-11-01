@@ -5,8 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { useFormikContext } from "formik";
 // GLOBAL CUSTOM COMPONENT
 import { H6 } from "components/Typography";
-// DUMMY CUSTOM DATA
-import countryList from "data/countryList";
+
 // TYPES
 import { InitialValues } from "./types";
 // STYLED COMPONENT
@@ -18,12 +17,12 @@ export default function ShippingForm() {
 
   return (
     <CardRoot>
-      <H6 mb={2}>Shipping Address</H6>
+      <H6 mb={2}>Datos de envio</H6>
 
       <FormWrapper>
         <TextField
           fullWidth
-          label="Full Name"
+          label="Nombre Completo"
           name="shipping_name"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -34,7 +33,7 @@ export default function ShippingForm() {
 
         <TextField
           fullWidth
-          label="Phone Number"
+          label="Telefono de contacto"
           name="shipping_contact"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -46,7 +45,7 @@ export default function ShippingForm() {
         <TextField
           fullWidth
           type="email"
-          label="Email Address"
+          label="Email"
           name="shipping_email"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -57,7 +56,7 @@ export default function ShippingForm() {
 
         <TextField
           fullWidth
-          label="Company"
+          label="Empresa"
           name="shipping_company"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -68,7 +67,7 @@ export default function ShippingForm() {
 
         <TextField
           fullWidth
-          label="Address 1"
+          label="Direccion de contacto"
           name="shipping_address1"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -79,7 +78,7 @@ export default function ShippingForm() {
 
         <TextField
           fullWidth
-          label="Address 2"
+          label="Direccion de Envio"
           name="shipping_address2"
           onBlur={handleBlur}
           onChange={handleChange}
@@ -88,40 +87,6 @@ export default function ShippingForm() {
           error={Boolean(touched.shipping_address2 && errors.shipping_address2)}
         />
 
-        <Autocomplete
-          fullWidth
-          options={countryList}
-          getOptionLabel={(option) => option.label}
-          value={countryList.find(
-            (item) => item.value === values.shipping_country,
-          )}
-          onChange={(_, item) =>
-            setFieldValue("shipping_country", item?.value || "")
-          }
-          renderInput={(params) => (
-            <TextField
-              label="Country"
-              variant="outlined"
-              placeholder="Select Country"
-              helperText={touched.shipping_country && errors.shipping_country}
-              error={Boolean(
-                touched.shipping_country && errors.shipping_country,
-              )}
-              {...params}
-            />
-          )}
-        />
-
-        <TextField
-          fullWidth
-          label="Zip Code"
-          name="shipping_zip"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={values.shipping_zip}
-          helperText={touched.shipping_zip && errors.shipping_zip}
-          error={Boolean(touched.shipping_zip && errors.shipping_zip)}
-        />
       </FormWrapper>
     </CardRoot>
   );

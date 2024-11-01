@@ -70,8 +70,6 @@ export default function CheckoutForm() {
           <form onSubmit={handleSubmit}>
             <ShippingForm />
 
-            <BillingAddressForm />
-
             <Grid container spacing={6}>
               <Grid item sm={6} xs={12}>
                 <Button
@@ -81,20 +79,10 @@ export default function CheckoutForm() {
                   variant="outlined"
                   LinkComponent={Link}
                 >
-                  Back to Cart
+                  Volver al Carrito
                 </Button>
               </Grid>
 
-              <Grid item sm={6} xs={12}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  fullWidth
-                >
-                  Proceed to Payment
-                </Button>
-              </Grid>
             </Grid>
           </form>
         );
