@@ -27,7 +27,7 @@ export function H1(props: Props) {
   return (
     <StyledBox
       fontSize={30}
-      component="h1"
+      ////component="h1"
       fontWeight={700}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -44,7 +44,7 @@ export function H2(props: Props) {
   return (
     <StyledBox
       fontSize={25}
-      component="h2"
+      ////component="h2"
       fontWeight={700}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -61,7 +61,7 @@ export function H3(props: Props) {
   return (
     <StyledBox
       fontSize={20}
-      component="h3"
+      //component="h3"
       fontWeight={700}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -78,7 +78,7 @@ export function H4(props: Props) {
   return (
     <StyledBox
       fontSize={17}
-      component="h4"
+      //component="h4"
       fontWeight={600}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -95,7 +95,7 @@ export function H5(props: Props) {
   return (
     <StyledBox
       fontSize={16}
-      component="h5"
+      //component="h5"
       lineHeight={1}
       fontWeight={600}
       ellipsis={ellipsis ? 1 : 0}
@@ -113,7 +113,7 @@ export function H6(props: Props) {
   return (
     <StyledBox
       fontSize={14}
-      component="h6"
+      //component="h6"
       fontWeight={600}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -130,7 +130,7 @@ export function Paragraph(props: Props) {
   return (
     <StyledBox
       fontSize={14}
-      component="p"
+      //component="p"
       fontWeight={400}
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
@@ -148,7 +148,7 @@ export function Small(props: Props) {
     <StyledBox
       fontSize={12}
       fontWeight={400}
-      component="small"
+      //component="small"
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
       {...others}
@@ -163,7 +163,7 @@ export function Span(props: Props) {
 
   return (
     <StyledBox
-      component="span"
+      //component="span"
       ellipsis={ellipsis ? 1 : 0}
       {...(className && { className: clsx({ [className]: true }) })}
       {...others}
@@ -178,7 +178,7 @@ export function Tiny(props: Props) {
 
   return (
     <StyledBox
-      component="small"
+      //component="small"
       fontSize={10}
       fontWeight={400}
       ellipsis={ellipsis ? 1 : 0}

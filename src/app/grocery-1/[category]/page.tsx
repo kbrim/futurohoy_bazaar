@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import GroceryOnePageView from "pages-sections/grocery-1/page-view";
+//import GroceryOnePageView from "pages-sections/grocery-1/page-view";
 // API FUNCTIONS
 import api from "utils/__api__/grocery-1";
 
@@ -19,9 +19,9 @@ interface Props {
 }
 // ==============================================================
 
-export default async function GroceryOneWithCategory({ params }: Props) {
-  const category = await api.getCategory(params.category);
-  if (!category) notFound();
+export default async function GroceryOneWithCategory() {
+  //const category = await api.getCategory(params.category);
+  //if (!category) notFound();
 
-  return <GroceryOnePageView selected={category.title} />;
+  return <></>;//<GroceryOnePageView selected={category.title} />;
 }

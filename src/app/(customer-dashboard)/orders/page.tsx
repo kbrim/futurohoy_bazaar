@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { page: string };
+  searchParams: Promise<{ page: string }>;
 }
 // ==============================================================
 
 export default async function Orders({ searchParams }: Props) {
-  const data = await api.getOrders(+searchParams.page || 1);
+  const data = await api.getOrders(+(await searchParams).page || 1);
 
   if (!data || data.orders.length === 0) {
     return <div>Failed to load</div>;

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HealthBeautyPageView from "pages-sections/health-beauty/page-view";
+//import HealthBeautyPageView from "pages-sections/health-beauty/page-view";
 
 export const metadata: Metadata = {
   title: "Health & Beauty - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default async function HealthBeauty() {
-  return <HealthBeautyPageView />;
+  return <></>//<HealthBeautyPageView />;
 }

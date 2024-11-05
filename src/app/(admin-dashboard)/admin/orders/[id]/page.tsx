@@ -4,7 +4,7 @@ import { OrderDetailsPageView } from "pages-sections/vendor-dashboard/orders/pag
 // API FUNCTIONS
 import api from "utils/__api__/dashboard";
 // CUSTOM DATA MODEL
-import { IdParams } from "models/Common";
+import { IdParamsAsync } from "models/Common";
 
 export const metadata: Metadata = {
   title: "Order Details - Bazaar Next.js E-commerce Template",
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   keywords: ["e-commerce", "e-commerce template", "next.js", "react"],
 };
 
-export default async function OrderDetails({ params }: IdParams) {
+export default async function OrderDetails({ params }: IdParamsAsync) {
   try {
-    const order = await api.getOrder(String(params.id));
+    const order = await api.getOrder(String((await params).id));
     return <OrderDetailsPageView order={order} />;
   } catch (error) {
     notFound();

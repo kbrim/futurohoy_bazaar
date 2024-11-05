@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import FashionThreePageView from "pages-sections/fashion-3/page-view";
+//import FashionThreePageView from "pages-sections/fashion-3/page-view";
 
 export const metadata: Metadata = {
   title: "Fashion 3 - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function FashionShopThree() {
-  return <FashionThreePageView />;
+  return <></>//<FashionThreePageView />;
 }

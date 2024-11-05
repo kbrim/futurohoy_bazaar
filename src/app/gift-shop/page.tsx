@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GiftShopPageView from "pages-sections/gift-shop/page-view";
+//import GiftShopPageView from "pages-sections/gift-shop/page-view";
 
 export const metadata: Metadata = {
   title: "Gift Shop - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function GiftShop() {
-  return <GiftShopPageView />;
+  return <></>;//<GiftShopPageView />;
 }

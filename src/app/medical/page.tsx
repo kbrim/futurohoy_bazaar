@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import MedicalPageView from "pages-sections/medical/page-view";
+//import MedicalPageView from "pages-sections/medical/page-view";
 
 export const metadata: Metadata = {
   title: "Medical - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function MedicalShop() {
-  return <MedicalPageView />;
+  return <></>//<MedicalPageView />;
 }

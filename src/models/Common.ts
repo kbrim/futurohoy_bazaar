@@ -2,8 +2,16 @@ export interface SlugParams {
   params: { slug: string };
 }
 
+export interface SlugParamsAsync {
+  params: Promise<{ slug: string }>;
+}
+
 export interface IdParams {
   params: { id: string };
+}
+
+export interface IdParamsAsync {
+  params: Promise<{ id: string }>;
 }
 
 export interface Category {

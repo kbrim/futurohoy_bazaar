@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { [key: string]: string };
+  searchParams: Promise<{ [key: string]: string }>;
 }
 // ==============================================================
 
 export default async function PaymentMethods({ searchParams }: Props) {
-  const data = await api.getPayments(+searchParams.page || 1);
+  const data = await api.getPayments(+(await searchParams).page || 1);
 
   if (!data || data.payments.length === 0) {
     return <div>Data not found</div>;

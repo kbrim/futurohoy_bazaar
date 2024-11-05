@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import FashionOnePageView from "pages-sections/fashion-1/page-view";
+//import FashionOnePageView from "pages-sections/fashion-1/page-view";
 
 export const metadata: Metadata = {
   title: "Fashion 1 - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function FashionShopOne() {
-  return <FashionOnePageView />;
+  return <></>//<FashionOnePageView />;
 }

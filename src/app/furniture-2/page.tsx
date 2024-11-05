@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import FurnitureTwoPageView from "pages-sections/furniture-2/page-view";
+//import FurnitureTwoPageView from "pages-sections/furniture-2/page-view";
 
 export const metadata: Metadata = {
   title: "Furniture Shop - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function FurnitureShopTwo() {
-  return <FurnitureTwoPageView />;
+  return <></>;//<FurnitureTwoPageView />;
 }

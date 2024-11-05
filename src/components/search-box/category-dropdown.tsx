@@ -36,7 +36,7 @@ export default function CategoryDropdown({ categories }: Props) {
       direction="left"
       sx={{ zIndex: breakpoints.down("md") ? 99999 : 1502 }}
       handler={(e) => (
-        <DropDownHandler component={TouchRipple} onClick={e}>
+        <DropDownHandler /*component={TouchRipple}*/ onClick={e}>
           {categories.find((item) => item.value === selected)?.title}
           <KeyboardArrowDownOutlined fontSize="small" color="inherit" />
         </DropDownHandler>

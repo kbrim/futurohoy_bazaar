@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { [key: string]: string };
+  searchParams: Promise<{ [key: string]: string }>;
 }
 // ==============================================================
 
 export default async function Address({ searchParams }: Props) {
-  const data = await api.getAddressList(+searchParams.page || 1);
+  const data = await api.getAddressList(+(await searchParams).page || 1);
 
   if (!data || data.addressList.length === 0) {
     return <div>Data not found</div>;

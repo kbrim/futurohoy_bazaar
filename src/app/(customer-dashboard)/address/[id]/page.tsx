@@ -4,12 +4,12 @@ import { AddressDetailsPageView } from "pages-sections/customer-dashboard/addres
 // API FUNCTIONS
 import api from "utils/__api__/address";
 // CUSTOM DATA MODEL
-import { IdParams } from "models/Common";
+import { IdParamsAsync } from "models/Common";
 
 export async function generateMetadata({
   params,
-}: IdParams): Promise<Metadata> {
-  const address = await api.getAddress(params.id);
+}: IdParamsAsync): Promise<Metadata> {
+  const address = await api.getAddress((await params).id);
   if (!address) notFound();
 
   return {
@@ -20,8 +20,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Address({ params }: IdParams) {
-  const address = await api.getAddress(params.id);
+export default async function Address({ params }: IdParamsAsync) {
+  const address = await api.getAddress((await params).id);
 
   if (!address) notFound();
 

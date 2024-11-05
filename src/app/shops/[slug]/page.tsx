@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ShopDetails({ params }) {
-  const shop = await api.getProductsBySlug(params.slug);
+  const shop = await api.getProductsBySlug((await params).slug);
   const filters = await getFilters();
 
   if (!shop) notFound();

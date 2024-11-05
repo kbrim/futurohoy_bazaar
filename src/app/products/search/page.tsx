@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     q: string;
     sale: string;
     page: string;
@@ -23,13 +23,13 @@ interface Props {
     brands: string;
     rating: string;
     category: string;
-  };
+  }>;
 }
 // ==============================================================
 
 export default async function ProductSearch({ searchParams }: Props) {
   const { q, page, sort, sale, prices, colors, brands, rating, category } =
-    searchParams;
+    await searchParams;
 
   const [filters, data] = await Promise.all([
     getFilters(),

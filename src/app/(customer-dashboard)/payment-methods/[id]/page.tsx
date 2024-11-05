@@ -4,7 +4,7 @@ import { PaymentDetailsPageView } from "pages-sections/customer-dashboard/paymen
 // API FUNCTIONS
 import api from "utils/__api__/payments";
 // TYPES
-import { IdParams } from "models/Common";
+import { IdParamsAsync } from "models/Common";
 
 export const metadata: Metadata = {
   title: "Payment Details - Bazaar Next.js E-commerce Template",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   keywords: ["e-commerce", "e-commerce template", "next.js", "react"],
 };
 
-export default async function PaymentMethodDetails({ params }: IdParams) {
-  const payment = await api.getPayment(params.id);
+export default async function PaymentMethodDetails({ params }: IdParamsAsync) {
+  const payment = await api.getPayment((await params).id);
 
   if (!payment) notFound();
 

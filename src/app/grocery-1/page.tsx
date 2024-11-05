@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GroceryOnePageView from "pages-sections/grocery-1/page-view";
+//import GroceryOnePageView from "pages-sections/grocery-1/page-view";
 
 export const metadata: Metadata = {
   title: "Grocery 1 - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default async function GroceryOne() {
-  return <GroceryOnePageView />;
+  return <></>;//<GroceryOnePageView />;
 }

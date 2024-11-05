@@ -4,12 +4,12 @@ import { TicketDetailsPageView } from "pages-sections/customer-dashboard/support
 // API FUNCTIONS
 import api from "utils/__api__/ticket";
 // CUSTOM DATA MODEL
-import { SlugParams } from "models/Common";
+import { SlugParamsAsync } from "models/Common";
 
 export async function generateMetadata({
   params,
-}: SlugParams): Promise<Metadata> {
-  const ticket = await api.getTicket(params.slug);
+}: SlugParamsAsync): Promise<Metadata> {
+  const ticket = await api.getTicket((await params).slug);
   if (!ticket) notFound();
 
   return {
@@ -20,8 +20,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function SupportTicketDetails({ params }: SlugParams) {
-  const ticket = await api.getTicket(params.slug);
+export default async function SupportTicketDetails({ params }: SlugParamsAsync) {
+  const ticket = await api.getTicket((await params).slug);
 
   if (!ticket) notFound();
 
