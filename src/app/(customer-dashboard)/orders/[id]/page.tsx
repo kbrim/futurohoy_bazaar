@@ -4,12 +4,12 @@ import { OrderDetailsPageView } from "pages-sections/customer-dashboard/orders/p
 // API FUNCTIONS
 import api from "utils/__api__/orders";
 // CUSTOM DATA MODEL
-import { IdParams } from "models/Common";
+import { IdParamsAsync } from "models/Common";
 
 export async function generateMetadata({
   params,
-}: IdParams): Promise<Metadata> {
-  const order = await api.getOrder(params.id);
+}: IdParamsAsync): Promise<Metadata> {
+  const order = await api.getOrder((await params).id);
   if (!order) notFound();
 
   return {
@@ -20,8 +20,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function OrderDetails({ params }: IdParams) {
-  const order = await api.getOrder(params.id);
+export default async function OrderDetails({ params }: IdParamsAsync) {
+  const order = await api.getOrder((await params).id);
 
   if (!order) notFound();
 

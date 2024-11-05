@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import MarketOnePageView from "pages-sections/market-1/page-view";
+//import MarketOnePageView from "pages-sections/market-1/page-view";
 
 export const metadata: Metadata = {
   title: "Market 1 - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default async function MarketOne() {
-  return <MarketOnePageView />;
+  return <></>//<MarketOnePageView />;
 }

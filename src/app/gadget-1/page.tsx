@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GadgetOnePageView from "pages-sections/gadget-1/page-view";
+//import GadgetOnePageView from "pages-sections/gadget-1/page-view";
 
 export const metadata: Metadata = {
   title: "Gadget Shop - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function GadgetShop() {
-  return <GadgetOnePageView />;
+  return <></>;//<GadgetOnePageView />;
 }

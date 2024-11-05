@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { page: string };
+  searchParams: Promise<{ page: string }>;
 }
 // ==============================================================
 
 export default async function WishList({ searchParams }: Props) {
-  const data = await getWishListProducts(+searchParams.page || 1);
+  const data = await getWishListProducts(+(await searchParams).page || 1);
 
   if (!data || data.products.length === 0) {
     return <div>Data not found</div>;

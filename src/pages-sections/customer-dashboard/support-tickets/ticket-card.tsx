@@ -21,7 +21,7 @@ export default function TicketCard({ ticket }: Props) {
 
   return (
     <Link href={`/support-tickets/${slug}`} key={id}>
-      <FlexBetween component={Card} px={2.5} py={2} mb={2}>
+      <FlexBetween /*component={Card}*/ px={2.5} py={2} mb={2}>
         <div>
           <Paragraph mb={1.5} lineHeight={1}>
             {title}

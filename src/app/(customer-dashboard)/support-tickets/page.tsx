@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { page: string };
+  searchParams: Promise<{ page: string }>;
 }
 // ==============================================================
 
 export default async function SupportTickets({ searchParams }: Props) {
-  const data = await api.getTicketList(+searchParams.page || 1);
+  const data = await api.getTicketList(+(await searchParams).page || 1);
 
   if (!data || data.tickets.length === 0) {
     return <div>Data not found</div>;

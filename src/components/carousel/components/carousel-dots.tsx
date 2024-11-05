@@ -14,7 +14,7 @@ export default function CarouselDots({ dotColor, ...props }: Props) {
     customPaging: () => <Dot dotColor={dotColor} />,
     appendDots: (dots: ReactNode) => (
       <Fragment>
-        <DotList component="ul" {...props}>
+        <DotList /*component="ul"*/ {...props}>
           {dots}
         </DotList>
       </Fragment>

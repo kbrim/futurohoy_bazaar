@@ -3,7 +3,7 @@ import { SalesTwoPageView } from "pages-sections/sales/page-view";
 // SALES API FUNCTIONS
 import api from "utils/__api__/sales";
 // CUSTOM TYPES
-import { SlugParams } from "models/Common";
+import { SlugParamsAsync } from "models/Common";
 
 export const metadata: Metadata = {
   title: "Sales 2 - Bazaar Next.js E-commerce Template",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 // ==============================================================
-interface Props extends SlugParams {
-  searchParams: { [key: string]: string };
+interface Props extends SlugParamsAsync {
+  searchParams: Promise<{ [key: string]: string }>;
 }
 // ==============================================================
 
@@ -22,8 +22,8 @@ export default async function SalesWithCategoryPage({
   params,
   searchParams,
 }: Props) {
-  const page = +searchParams.page || 1;
-  const data = await api.getProducts(page, params.slug);
+  const page = +(await searchParams).page || 1;
+  const data = await api.getProducts(page, (await params).slug);
 
   if (!data) {
     return <div>Failed to load</div>;

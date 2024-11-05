@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import FurnitureOnePageView from "pages-sections/furniture-1/page-view";
+//import FurnitureOnePageView from "pages-sections/furniture-1/page-view";
 // API FUNCTIONS
 import api from "utils/__api__/furniture-1";
 
@@ -19,9 +19,9 @@ interface Props {
 }
 // ==============================================================
 
-export default async function FurnitureShopWithCategory({ params }: Props) {
-  const category = await api.getCategory(params.category);
-  if (!category) notFound();
+export default async function FurnitureShopWithCategory() {
+  //const category = await api.getCategory(params.category);
+  //if (!category) notFound();
 
-  return <FurnitureOnePageView selected={category.title} />;
+  return <></>//<FurnitureOnePageView selected={category.title} />;
 }

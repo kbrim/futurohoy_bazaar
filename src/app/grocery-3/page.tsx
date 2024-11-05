@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GroceryThreePageView from "pages-sections/grocery-3/page-view";
+//import GroceryThreePageView from "pages-sections/grocery-3/page-view";
 
 export const metadata: Metadata = {
   title: "Futurohoy",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default async function GroceryThree() {
-  return <GroceryThreePageView />;
+  return <></>;//<GroceryThreePageView />;
 }

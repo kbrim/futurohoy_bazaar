@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { MarketTwoPageView } from "pages-sections/market-2/page-view";
+//import { MarketTwoPageView } from "pages-sections/market-2/page-view";
 
 export const metadata: Metadata = {
   title: "Market 2 - Bazaar Next.js E-commerce Template",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function MarketTwo() {
-  return <MarketTwoPageView />;
+  return <></>//<MarketTwoPageView />;
 }

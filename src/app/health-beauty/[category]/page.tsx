@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import HealthBeautyPageView from "pages-sections/health-beauty/page-view";
+//import HealthBeautyPageView from "pages-sections/health-beauty/page-view";
 // API FUNCTIONS
 import api from "utils/__api__/healthbeauty-shop";
 
@@ -19,9 +19,9 @@ interface Props {
 }
 // ==============================================================
 
-export default async function HealthBeautyWithCategory({ params }: Props) {
-  const category = await api.getCategory(params.category);
-  if (!category) notFound();
+export default async function HealthBeautyWithCategory() {
+  //const category = await api.getCategory(params.category);
+  //if (!category) notFound();
 
-  return <HealthBeautyPageView selected={category.title} />;
+  return <></>;//<HealthBeautyPageView selected={category.title} />;
 }

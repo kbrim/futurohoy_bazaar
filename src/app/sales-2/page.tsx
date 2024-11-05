@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 // ==============================================================
 interface Props {
-  searchParams: { [key: string]: string };
+  searchParams: Promise<{ [key: string]: string }>;
 }
 // ==============================================================
 
 export default async function SalesTwo({ searchParams }: Props) {
-  const page = +searchParams.page || 1;
+  const page = +(await searchParams).page || 1;
   const data = await api.getProducts(page);
 
   if (!data) {

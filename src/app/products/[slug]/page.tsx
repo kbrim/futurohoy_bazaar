@@ -9,12 +9,12 @@ import {
   getRelatedProducts,
 } from "utils/__api__/related-products";
 // CUSTOM DATA MODEL
-import { SlugParams } from "models/Common";
+import { SlugParamsAsync } from "models/Common";
 
 export async function generateMetadata({
   params,
-}: SlugParams): Promise<Metadata> {
-  const product = await api.getProduct(params.slug);
+}: SlugParamsAsync): Promise<Metadata> {
+  const product = await api.getProduct((await params).slug);
   if (!product) notFound();
 
   return {
@@ -25,9 +25,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductDetails({ params }: SlugParams) {
+export default async function ProductDetails({ params }: SlugParamsAsync) {
   const [product, relatedProducts, frequentlyBought] = await Promise.all([
-    api.getProduct(params.slug),
+    api.getProduct((await params).slug),
     getRelatedProducts(),
     getFrequentlyBought(),
   ]);
