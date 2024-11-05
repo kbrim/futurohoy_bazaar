@@ -110,10 +110,6 @@ export default function CheckoutForm() {
 
       <Divider sx={{ mb: 2 }} />
       
-     
-      <Button variant="outlined" color="primary" fullWidth sx={{ my: 2 }}>
-        Calcular Pedido
-      </Button>
 
       <Button
         fullWidth
