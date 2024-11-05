@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -39,6 +38,7 @@ export default function CategoryForm(props: Props) {
 
   // HANDLE UPDATE NEW IMAGE VIA DROP ZONE
   const handleChangeDropZone = (files: File[]) => {
+    console.log(files[0]);
     files.forEach((file) =>
       Object.assign(file, { preview: URL.createObjectURL(file) }),
     );
@@ -120,6 +120,7 @@ export default function CategoryForm(props: Props) {
 
               <Grid item xs={12}>
                 <Button variant="contained" color="info" type="submit">
+
                   Guardar Categoria
                 </Button>
               </Grid>
