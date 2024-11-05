@@ -1,5 +1,7 @@
 import { cache } from "react";
 import axios from "utils/axiosInstance";
+import axiosMigration from "utils/axiosInstanceMigration";
+
 // CUSTOM DATA MODEL
 import { SlugParams } from "models/Common";
 import Product from "models/Product.model";

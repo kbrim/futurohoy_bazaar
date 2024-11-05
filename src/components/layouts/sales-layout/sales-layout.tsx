@@ -55,13 +55,6 @@ export default function SalesLayout({ children, data }: Props) {
 
   return (
     <Fragment>
-      {/* TOP BAR AREA */}
-      <Topbar label={topbar.label} title={topbar.title}>
-        <Topbar.Right>
-          <TopbarLanguageSelector languages={topbar.languageOptions} />
-          <TopbarSocialLinks links={topbar.socials} />
-        </Topbar.Right>
-      </Topbar>
 
       {/* HEADER AREA */}
       <Header mobileHeader={MOBILE_VERSION_HEADER}>

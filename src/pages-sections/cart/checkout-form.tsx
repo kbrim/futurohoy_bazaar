@@ -5,14 +5,13 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
+
 // GLOBAL CUSTOM HOOK
 import useCart from "hooks/useCart";
 // GLOBAL CUSTOM COMPONENTS
 import { Span } from "components/Typography";
 import { FlexBetween, FlexBox } from "components/flex-box";
-// DUMMY CUSTOM DATA
-import countryList from "data/countryList";
+
 // CUSTOM UTILS LIBRARY FUNCTION
 import { currency } from "lib";
 
@@ -23,91 +22,48 @@ export default function CheckoutForm() {
     state.cart.reduce((acc, item) => acc + item.price * item.qty, 0);
 
   const STATE_LIST = [
-    { value: "new-york", label: "New York" },
-    { value: "chicago", label: "Chicago" },
+    { value: "40", label: "Santiago" },
+    { value: "60", label: "Valparaiso" },
   ];
 
   return (
     <Card sx={{ padding: 3 }}>
-      <FlexBetween mb={2}>
-        <Span color="grey.600">Total:</Span>
-
-        <Span fontSize={18} fontWeight={600} lineHeight="1">
-          {currency(getTotalPrice())}
-        </Span>
-      </FlexBetween>
-
-      <Divider sx={{ mb: 2 }} />
 
       <FlexBox alignItems="center" columnGap={1} mb={2}>
-        <Span fontWeight="600">Additional Comments</Span>
+        <Span fontWeight="600">Comentarios Adicionales</Span>
 
         <Span
           p="6px 10px"
-          fontSize={12}
+          fontSize={8}
           lineHeight="1"
           borderRadius="3px"
           color="primary.main"
           bgcolor="primary.light"
         >
-          Note
+          Notas
         </Span>
       </FlexBox>
 
       {/* COMMENTS TEXT FIELD */}
       <TextField variant="outlined" rows={6} fullWidth multiline />
 
+
       <Divider sx={{ mb: 2 }} />
-
-      {/* APPLY VOUCHER TEXT FIELD */}
-      <TextField
-        fullWidth
-        size="small"
-        label="Voucher"
-        variant="outlined"
-        placeholder="Voucher"
-      />
-
-      <Button
-        variant="outlined"
-        color="primary"
-        fullWidth
-        sx={{ mt: 2, mb: 4 }}
-      >
-        Apply Voucher
-      </Button>
-
       <Divider sx={{ mb: 2 }} />
 
       <Span fontWeight={600} mb={2} display="block">
-        Shipping Estimates
+        Envio Estimado
       </Span>
-
-      {/* COUNTRY TEXT FIELD */}
-      <Autocomplete
-        fullWidth
-        sx={{ mb: 2 }}
-        options={countryList}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            size="small"
-            label="Country"
-            variant="outlined"
-            placeholder="Select Country"
-          />
-        )}
-      />
 
       {/* STATE/CITY TEXT FIELD */}
       <TextField
         select
         fullWidth
         size="small"
-        label="State"
+        label="Ciudad"
         variant="outlined"
-        placeholder="Select State"
-        defaultValue="new-york"
+        placeholder="Seleccionar Ciudad"
+        defaultValue="Region Metropolitana"
       >
         {STATE_LIST.map(({ label, value }) => (
           <MenuItem value={value} key={label}>
@@ -116,18 +72,47 @@ export default function CheckoutForm() {
         ))}
       </TextField>
 
-      {/* ZIP-CODE TEXT FIELD */}
-      <TextField
-        fullWidth
-        size="small"
-        label="Zip Code"
-        placeholder="3100"
-        variant="outlined"
-        sx={{ mt: 2 }}
-      />
+      <Divider sx={{ mb: 2 }} />
 
+      <FlexBetween mb={2}>
+        <Span color="grey.600">Costo Envio:</Span>
+        <Span fontSize={18} fontWeight={600} lineHeight="1">
+          0
+        </Span>
+      </FlexBetween>
+      
+      <Divider sx={{ mb: 2 }} />
+
+      <FlexBetween mb={2}>
+        <Span color="grey.600">Neto:</Span>
+        <Span fontSize={18} fontWeight={600} lineHeight="1">
+          {currency(getTotalPrice())}
+        </Span>
+      </FlexBetween>
+
+      <Divider sx={{ mb: 2 }} />
+
+      <FlexBetween mb={2}>
+        <Span color="grey.600">IVA (19%):</Span>
+        <Span fontSize={18} fontWeight={600} lineHeight="1">
+          {currency(getTotalPrice()*0.19)}
+        </Span>
+      </FlexBetween>
+
+      <Divider sx={{ mb: 2 }} />
+
+      <FlexBetween mb={2}>
+        <Span color="grey.600">Total:</Span>
+        <Span fontSize={18} fontWeight={600} lineHeight="1">
+          {currency(getTotalPrice() + getTotalPrice()*0.19)}
+        </Span>
+      </FlexBetween>
+
+      <Divider sx={{ mb: 2 }} />
+      
+     
       <Button variant="outlined" color="primary" fullWidth sx={{ my: 2 }}>
-        Calculate Shipping
+        Calcular Pedido
       </Button>
 
       <Button
@@ -137,7 +122,7 @@ export default function CheckoutForm() {
         variant="contained"
         LinkComponent={Link}
       >
-        Checkout Now
+        Envio Cotizacion
       </Button>
     </Card>
   );

@@ -38,7 +38,7 @@ export const LayoutEndpoints = (Mock: MockAdapter) => {
             categories: db.categories,
             categoryMenus: categoryMenus,
             navigation: navbarNavigation,
-            logo: "/assets/images/logo2.svg",
+            logo: "/assets/images/logos/41.png",
           },
         },
       ];

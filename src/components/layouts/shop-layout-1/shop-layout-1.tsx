@@ -61,14 +61,6 @@ export default function ShopLayout1({ children, data }: Props) {
 
   return (
     <Fragment>
-      {/* TOP BAR SECTION */}
-      <Topbar label={topbar.label} title={topbar.title}>
-        <Topbar.Right>
-          <TopbarLanguageSelector languages={topbar.languageOptions} />
-          <TopbarSocialLinks links={topbar.socials} />
-        </Topbar.Right>
-      </Topbar>
-
       {/* HEADER */}
       <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={300}>
         <Header mobileHeader={MOBILE_VERSION_HEADER}>
@@ -94,13 +86,6 @@ export default function ShopLayout1({ children, data }: Props) {
         </Header>
       </Sticky>
 
-      {/* NAVIGATION BAR */}
-      <Navbar
-        border={1}
-        elevation={0}
-        navigation={<NavigationList navigation={header.navigation} />}
-        categories={<CategoryList categories={header.categoryMenus} />}
-      />
 
       {/* BODY CONTENT */}
       {children}
@@ -114,34 +99,7 @@ export default function ShopLayout1({ children, data }: Props) {
           <Link href="/">
             <Image src={footer.logo} alt="logo" width={105} height={50} />
           </Link>
-
-          <Paragraph mt={1} mb={3} color="grey.500" maxWidth={370}>
-            {footer.description}
-          </Paragraph>
-
-          <FooterApps
-            playStoreUrl={footer.playStoreUrl}
-            appleStoreUrl={footer.appStoreUrl}
-          />
         </Footer1.Brand>
-
-        <Footer1.Widget1>
-          <FooterLinksWidget title="About Us" links={footer.about} />
-        </Footer1.Widget1>
-
-        <Footer1.Widget2>
-          <FooterLinksWidget title="Customer Care" links={footer.customers} />
-        </Footer1.Widget2>
-
-        <Footer1.Contact>
-          <FooterContact
-            phone={footer.contact.phone}
-            email={footer.contact.email}
-            address={footer.contact.address}
-          />
-
-          <FooterSocialLinks links={footer.socials} />
-        </Footer1.Contact>
       </Footer1>
     </Fragment>
   );

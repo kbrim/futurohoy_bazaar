@@ -11,24 +11,16 @@ interface Props {
 export default function BottomActions({ total, handleNavigate }: Props) {
   return (
     <Box p={2.5}>
-      <Button
-        fullWidth
-        color="primary"
-        variant="contained"
-        sx={{ mb: "0.75rem", height: 40 }}
-        onClick={handleNavigate("/checkout-alternative")}
-      >
-        Checkout Now ({total})
-      </Button>
 
       <Button
         fullWidth
         color="primary"
         variant="outlined"
         sx={{ height: 40 }}
+        href="/cart"
         onClick={handleNavigate("/cart")}
       >
-        View Cart
+        Ver Carro ({total})
       </Button>
     </Box>
   );

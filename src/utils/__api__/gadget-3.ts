@@ -4,9 +4,11 @@ import axios from "../axiosInstance";
 import Story from "models/Story.model";
 import Product from "models/Product.model";
 import { Category } from "models/Common";
+import axiosMigration from "utils/axiosInstanceMigration";
 
 const getAllProducts = cache(async (): Promise<Product[]> => {
-  const response = await axios.get("/api/gadget-3/products");
+  //const response = await axios.get("/api/gadget-3/products");
+  const response = await axiosMigration.get("/api/products");
   return response.data;
 });
 

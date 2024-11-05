@@ -26,10 +26,10 @@ export default function RootLayout({
   modal: ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className={openSans.className}>
         <CartProvider>
-          <SettingsProvider>
+        
             <ThemeProvider>
               <ProgressBar />
               <RTL>
@@ -37,7 +37,7 @@ export default function RootLayout({
                 {children}
               </RTL>
             </ThemeProvider>
-          </SettingsProvider>
+         
         </CartProvider>
 
       </body>

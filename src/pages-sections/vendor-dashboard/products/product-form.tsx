@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { DataGrid, GridRowsProp, GridColDef, GridToolbarContainer, GridRowModes, } from '@mui/x-data-grid';
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
-
 import { Formik } from "formik";
 import * as yup from "yup";
 // GLOBAL CUSTOM COMPONENTS
@@ -42,7 +40,6 @@ export default function ProductForm(props: Props) {
     stock: "",
     price: "",
     category: [],
-    rango:[],
     sale_price: "",
     description: "",
   };
@@ -66,46 +63,6 @@ export default function ProductForm(props: Props) {
     setFiles((files) => files.filter((item) => item.name !== file.name));
   };
 
-  const visibleFields = [
-    'producto',
-    'tipo_grabado',
-    'rango_min',
-    'rango_max',
-    'precio'
-  ];
-
-  const rows: GridRowsProp = [
-
-  ];
-  
-  const columns: GridColDef[] = [
-    { field: 'col1', headerName: 'Rango Minimo', width: 150 },
-    { field: 'col1', headerName: 'Rango Maximo', width: 150 },
-    { field: 'col2', headerName: 'Precio', width: 150 },
-  ];
-  
-  const handleClick = () => {
-    setRows((oldRows) => [
-      ...oldRows,
-      { id, name: '', age: '', role: '', isNew: true },
-    ]);
-    setRowModesModel((oldModel) => ({
-      ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-    }));
-  };
-
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
-      </Button>
-    </GridToolbarContainer>
-  );
-}
-
-
-
   return (
     <Card className="p-3">
       <Formik
@@ -127,10 +84,10 @@ export default function ProductForm(props: Props) {
                 <TextField
                   fullWidth
                   name="name"
-                  label="Nombre"
+                  label="Name"
                   color="info"
                   size="medium"
-                  placeholder="Nombre"
+                  placeholder="Name"
                   value={values.name}
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -147,41 +104,105 @@ export default function ProductForm(props: Props) {
                   size="medium"
                   name="category"
                   onBlur={handleBlur}
-                  placeholder="Categoria"
+                  placeholder="Category"
                   onChange={handleChange}
                   value={values.category}
-                  label="Seleccionar Categoria"
+                  label="Select Category"
                   SelectProps={{ multiple: true }}
                   error={Boolean(touched.category && errors.category)}
                   helperText={(touched.category && errors.category) as string}
                 >
-                  <MenuItem value="electronics">Deportes</MenuItem>
-                  <MenuItem value="fashion">Invierno</MenuItem>
+                  <MenuItem value="electronics">Electronics</MenuItem>
+                  <MenuItem value="fashion">Fashion</MenuItem>
                 </TextField>
               </Grid>
 
+
+
               <Grid item xs={12}>
                 <TextField
-                  rows={6}
+                  rows={3}
                   multiline
                   fullWidth
                   color="info"
                   size="medium"
                   name="description"
-                  label="Descripcion"
+                  label="Description"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  placeholder="Descripcion"
+                  placeholder="Description"
                   value={values.description}
                   helperText={touched.description && errors.description}
                   error={Boolean(touched.description && errors.description)}
                 />
               </Grid>
 
-              <Grid  item xs={12}>
-                    <DataGrid rows={rows} columns={columns} editMode="row"/>
+              <Grid item sm={6} xs={12}>
+                <TextField
+                  fullWidth
+                  name="stock"
+                  color="info"
+                  size="medium"
+                  label="Stock"
+                  placeholder="Stock"
+                  onBlur={handleBlur}
+                  value={values.stock}
+                  onChange={handleChange}
+                  helperText={touched.stock && errors.stock}
+                  error={Boolean(touched.stock && errors.stock)}
+                />
               </Grid>
-           
+
+              <Grid item sm={6} xs={12}>
+                <TextField
+                  fullWidth
+                  name="tags"
+                  label="Tags"
+                  color="info"
+                  size="medium"
+                  placeholder="Tags"
+                  onBlur={handleBlur}
+                  value={values.tags}
+                  onChange={handleChange}
+                  helperText={touched.tags && errors.tags}
+                  error={Boolean(touched.tags && errors.tags)}
+                />
+              </Grid>
+
+              <Grid item sm={6} xs={12}>
+                <TextField
+                  fullWidth
+                  name="price"
+                  color="info"
+                  size="medium"
+                  type="number"
+                  onBlur={handleBlur}
+                  value={values.price}
+                  label="Regular Price"
+                  onChange={handleChange}
+                  placeholder="Regular Price"
+                  helperText={touched.price && errors.price}
+                  error={Boolean(touched.price && errors.price)}
+                />
+              </Grid>
+
+              <Grid item sm={6} xs={12}>
+                <TextField
+                  fullWidth
+                  color="info"
+                  size="medium"
+                  type="number"
+                  name="sale_price"
+                  label="Sale Price"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  placeholder="Sale Price"
+                  value={values.sale_price}
+                  helperText={touched.sale_price && errors.sale_price}
+                  error={Boolean(touched.sale_price && errors.sale_price)}
+                />
+              </Grid>
+
               <Grid item xs={12}>
                 <DropZone onChange={(files) => handleChangeDropZone(files)} />
 
@@ -196,8 +217,6 @@ export default function ProductForm(props: Props) {
                   })}
                 </FlexBox>
               </Grid>
-
-
 
               <Grid item sm={6} xs={12}>
                 <Button variant="contained" color="info" type="submit">
