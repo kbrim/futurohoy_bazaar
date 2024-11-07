@@ -47,7 +47,6 @@ export default function ShopLayout4({ children, navigation, data }: Props) {
   const Sidebar = (
     <Fragment>
       <SideNavbarTwo navigation={navigation} />
-      <Footer links={footerLinks} />
     </Fragment>
   );
 
@@ -64,7 +63,6 @@ export default function ShopLayout4({ children, navigation, data }: Props) {
           <SearchInput />
         </HeaderSearch>
 
-        <HeaderLogin />
         <HeaderCart />
       </MobileHeader.Right>
     </MobileHeader>
@@ -89,8 +87,6 @@ export default function ShopLayout4({ children, navigation, data }: Props) {
           </Header.Mid>
 
           <Header.Right>
-            {/* HEADER LOGIN BUTTON */}
-            <HeaderLogin />
 
             {/* HEADER CART BUTTON */}
             <HeaderCart />

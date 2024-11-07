@@ -109,12 +109,7 @@ export default function CheckoutForm() {
       </FlexBetween>
 
       <Divider sx={{ mb: 2 }} />
-      
-     
-      <Button variant="outlined" color="primary" fullWidth sx={{ my: 2 }}>
-        Calcular Pedido
-      </Button>
-
+    
       <Button
         fullWidth
         color="primary"
@@ -122,7 +117,7 @@ export default function CheckoutForm() {
         variant="contained"
         LinkComponent={Link}
       >
-        Envio Cotizacion
+        Envio Cotización
       </Button>
     </Card>
   );

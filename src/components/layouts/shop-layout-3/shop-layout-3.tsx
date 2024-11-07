@@ -5,13 +5,7 @@ import { Fragment, PropsWithChildren } from "react";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 // GLOBAL CUSTOM COMPONENTS
-import {
-  Footer3,
-  FooterContact,
-  FooterCopyright,
-  FooterLinksWidget,
-  FooterSocialLinks,
-} from "components/footer";
+
 import Sticky from "components/sticky";
 import LazyImage from "components/LazyImage";
 import { Paragraph } from "components/Typography";
@@ -41,7 +35,6 @@ interface Props extends PropsWithChildren {
 export default function ShopLayout3({
   data,
   children,
-  showFooter = true,
   showMobileMenu = true,
   centeredNavigation = false,
 }: Props) {
@@ -60,7 +53,6 @@ export default function ShopLayout3({
           <SearchInput />
         </HeaderSearch>
 
-        <HeaderLogin />
         <HeaderCart />
       </MobileHeader.Right>
     </MobileHeader>
@@ -81,7 +73,6 @@ export default function ShopLayout3({
           </Header.Mid>
 
           <Header.Right>
-            <HeaderLogin />
             <HeaderCart />
           </Header.Right>
         </Header>
@@ -97,52 +88,7 @@ export default function ShopLayout3({
         <MobileNavigationBar navigation={mobileNavigation.version1} />
       ) : null}
 
-      {/* FOOTER */}
-      {showFooter ? (
-        <Fragment>
-          <Footer3>
-            <Footer3.Brand>
-              <Box maxWidth={100}>
-                <LazyImage
-                  src={footer.logo}
-                  alt="logo"
-                  width={105}
-                  height={50}
-                />
-              </Box>
 
-              <Paragraph mb={2.5} maxWidth={{ xl: 400 }}>
-                {footer.description}
-              </Paragraph>
-            </Footer3.Brand>
-
-            <Footer3.Widget1>
-              <FooterLinksWidget isDark title="About Us" links={footer.about} />
-            </Footer3.Widget1>
-
-            <Footer3.Widget2>
-              <FooterLinksWidget
-                isDark
-                title="Customer Care"
-                links={footer.customers}
-              />
-            </Footer3.Widget2>
-
-            <Footer3.Contact>
-              <FooterContact
-                color="inherit"
-                phone={footer.contact.phone}
-                email={footer.contact.email}
-                address={footer.contact.address}
-              />
-            </Footer3.Contact>
-          </Footer3>
-
-          <FooterCopyright>
-            <FooterSocialLinks variant="dark" links={footer.socials} />
-          </FooterCopyright>
-        </Fragment>
-      ) : null}
     </Fragment>
   );
 }
