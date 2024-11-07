@@ -28,7 +28,7 @@ const getCategories = cache(async (): Promise<Category[]> => {
 });
 
 const getBreadcrumb = cache(async (slug?: string): Promise<string> => {
-  const response = await axios.get("/api/gadget-3/breadcrumb", {
+  const response = await axiosMigration.get("/api/categorias", {
     params: { slug },
   });
   return response.data;
