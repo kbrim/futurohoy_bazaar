@@ -113,7 +113,7 @@ const megaMenus: MegaMenuItem[][] = [
 // MAIN NAVIGATION DATA
 const navbarNavigation: Menu[] = [
   {
-    title: "Home",
+    title: "Home3",
     megaMenu: false,
     megaMenuWithSub: false,
     child: [
