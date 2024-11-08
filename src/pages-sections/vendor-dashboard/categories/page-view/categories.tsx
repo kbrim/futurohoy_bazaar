@@ -44,11 +44,11 @@ const CategoriesPageView = ({ categories }: Props) => {
   } = useMuiTable({ listData: filteredCategories });
 
   return (
-    <PageWrapper title="Product Categories">
+    <PageWrapper title="Categorias de Productos">
       <SearchArea
-        buttonText="Add Category"
+        buttonText="Agregar Categoria"
         url="/admin/categories/create"
-        searchPlaceholder="Search Category..."
+        searchPlaceholder="Buscar Categoria..."
       />
 
       <Card>

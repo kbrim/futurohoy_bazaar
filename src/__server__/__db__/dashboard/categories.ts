@@ -21,7 +21,7 @@ export const categories = [
   },
   {
     id: "ce8d812a-1df6-4c00-84a0-e4ef9780adcd",
-    name: "Baby Doll",
+    name: "Baby Doll 4444",
     icon: null,
     parent: [],
     slug: "baby-doll",

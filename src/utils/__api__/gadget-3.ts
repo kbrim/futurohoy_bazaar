@@ -27,7 +27,6 @@ const getCategories = cache(async (slug?: string): Promise<Category[]> => {
   const response = await axiosMigration.get("/api/categorias", {
     params: { slug },
   });
-  console.log(response.data);
   return response.data;
 });
 
@@ -35,8 +34,6 @@ const getBreadcrumb = cache(async (slug?: string): Promise<string> => {
   const response = await axiosMigration.get("/api/categorias", {
     params: { slug },
   });
-  console.log(response.data);
-
   return response.data;
 });
 
