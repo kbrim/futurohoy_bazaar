@@ -16,7 +16,7 @@ export const LayoutEndpoints = (Mock: MockAdapter) => {
           footer: {
             appStoreUrl: "#",
             playStoreUrl: "#",
-            logo: "/assets/images/logo.svg",
+            logo: "/assets/images/logos/41.png",
             contact: db.footerContact,
             about: db.footerAboutLinks,
             socials: db.footerSocialLinks,
@@ -26,7 +26,7 @@ export const LayoutEndpoints = (Mock: MockAdapter) => {
           mobileNavigation: {
             version1: db.mobileNavigation,
             version2: db.mobileNavigationTwo,
-            logo: "/assets/images/bazaar-black-sm.svg",
+            logo: "/assets/images/logos/41.png",
           },
           topbar: {
             label: "HOT",

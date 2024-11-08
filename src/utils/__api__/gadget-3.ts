@@ -9,6 +9,7 @@ import axiosMigration from "utils/axiosInstanceMigration";
 const getAllProducts = cache(async (): Promise<Product[]> => {
   //const response = await axios.get("/api/gadget-3/products");
   const response = await axiosMigration.get("/api/products");
+
   return response.data;
 });
 
@@ -22,13 +23,15 @@ const getStories = cache(async (): Promise<Story[]> => {
   return response.data;
 });
 
-const getCategories = cache(async (): Promise<Category[]> => {
-  const response = await axios.get("/api/gadget-3/categories");
+const getCategories = cache(async (slug?: string): Promise<Category[]> => {
+  const response = await axiosMigration.get("/api/categorias", {
+    params: { slug },
+  });
   return response.data;
 });
 
 const getBreadcrumb = cache(async (slug?: string): Promise<string> => {
-  const response = await axios.get("/api/gadget-3/breadcrumb", {
+  const response = await axiosMigration.get("/api/categorias", {
     params: { slug },
   });
   return response.data;

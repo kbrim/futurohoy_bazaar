@@ -152,7 +152,7 @@ export default function RegisterPageView() {
               By signing up, you agree to
             </Span>
             <Span display={{ sm: "none", xs: "inline-block" }}>Accept Our</Span>
-            <BoxLink title="Terms & Condition" href="/" />
+            
           </FlexBox>
         }
       />

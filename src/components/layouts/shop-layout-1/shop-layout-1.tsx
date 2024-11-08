@@ -4,13 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment, PropsWithChildren, useCallback, useState } from "react";
 // GLOBAL CUSTOM COMPONENTS
-import {
-  Footer1,
-  FooterApps,
-  FooterContact,
-  FooterLinksWidget,
-  FooterSocialLinks,
-} from "components/footer";
+
 import Sticky from "components/sticky";
 import { Paragraph } from "components/Typography";
 import { CategoryList } from "components/categories";
@@ -77,9 +71,6 @@ export default function ShopLayout1({ children, data }: Props) {
           </Header.Mid>
 
           <Header.Right>
-            {/* HEADER LOGIN BUTTON */}
-            <HeaderLogin />
-
             {/* HEADER CART BUTTON */}
             <HeaderCart />
           </Header.Right>
@@ -93,14 +84,7 @@ export default function ShopLayout1({ children, data }: Props) {
       {/* SMALL DEVICE BOTTOM NAVIGATION */}
       <MobileNavigationBar navigation={mobileNavigation.version1} />
 
-      {/* FOOTER SECTION */}
-      <Footer1>
-        <Footer1.Brand>
-          <Link href="/">
-            <Image src={footer.logo} alt="logo" width={105} height={50} />
-          </Link>
-        </Footer1.Brand>
-      </Footer1>
+
     </Fragment>
   );
 }

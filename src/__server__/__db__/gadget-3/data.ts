@@ -809,7 +809,7 @@ export const products = [
 // categories
 export const categories = [
   {
-    name: "Grocery",
+    name: "Grocery 4",
     icon: "Grocery",
     path: "#",
     children: [
@@ -897,7 +897,7 @@ export const categories = [
         ],
       },
       {
-        name: "Diabetic Food",
+        name: "Diabetic Food 3",
         path: "/gadget-3/categories/diabetic-food",
       },
     ],

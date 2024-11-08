@@ -34,7 +34,7 @@ export const mobileNavigationTwo = [
 
 // CATEGORY LIST FOR HEADER
 export const categories = [
-  { title: "All Categories", value: "" },
+  { title: "Categorias", value: "" },
   { title: "Car", value: "car" },
   { title: "Clothes", value: "clothes" },
   { title: "Electronics", value: "electronics" },

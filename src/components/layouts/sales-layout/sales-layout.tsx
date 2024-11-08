@@ -4,13 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment, PropsWithChildren } from "react";
 // CUSTOM GLOBAL COMPONENTS
-import {
-  Footer1,
-  FooterApps,
-  FooterContact,
-  FooterLinksWidget,
-  FooterSocialLinks,
-} from "components/footer";
 import { Paragraph } from "components/Typography";
 import { MobileMenu } from "components/navbar/mobile-menu";
 import { MobileNavigationBar } from "components/mobile-navigation";
@@ -46,8 +39,6 @@ export default function SalesLayout({ children, data }: Props) {
         <HeaderSearch>
           <SearchInput />
         </HeaderSearch>
-
-        <HeaderLogin />
         <HeaderCart />
       </MobileHeader.Right>
     </MobileHeader>
@@ -76,41 +67,6 @@ export default function SalesLayout({ children, data }: Props) {
       {/* RENDER MAIN CONTENT AREA */}
       {children}
 
-      {/* FOOTER AREA */}
-      <Footer1>
-        <Footer1.Brand>
-          <Link href="/">
-            <Image src={footer.logo} alt="logo" width={105} height={50} />
-          </Link>
-
-          <Paragraph mt={1} mb={3} color="grey.500" maxWidth={370}>
-            {footer.description}
-          </Paragraph>
-
-          <FooterApps
-            playStoreUrl={footer.playStoreUrl}
-            appleStoreUrl={footer.appStoreUrl}
-          />
-        </Footer1.Brand>
-
-        <Footer1.Widget1>
-          <FooterLinksWidget title="About Us" links={footer.about} />
-        </Footer1.Widget1>
-
-        <Footer1.Widget2>
-          <FooterLinksWidget title="Customer Care" links={footer.customers} />
-        </Footer1.Widget2>
-
-        <Footer1.Contact>
-          <FooterContact
-            phone={footer.contact.phone}
-            email={footer.contact.email}
-            address={footer.contact.address}
-          />
-
-          <FooterSocialLinks links={footer.socials} />
-        </Footer1.Contact>
-      </Footer1>
 
       {/* SMALLER DEVICE NAVIGATION */}
       <MobileNavigationBar navigation={mobileNavigation.version1} />

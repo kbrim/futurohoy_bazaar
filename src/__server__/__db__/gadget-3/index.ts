@@ -35,8 +35,9 @@ export const Gadget3Endpoints = (Mock: MockAdapter) => {
     }
   });
 
-  Mock.onGet("/api/gadget-3/categories").reply(async () => {
+  Mock.onGet("/api/categorias").reply(async () => {
     try {
+      
       return [200, db.categories];
     } catch (err) {
       console.error(err);

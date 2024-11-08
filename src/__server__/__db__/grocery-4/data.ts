@@ -897,7 +897,7 @@ export const categories = [
         ],
       },
       {
-        name: "Diabetic Food",
+        name: "Diabetic Food 4",
         path: "/grocery-4/categories/diabetic-food",
       },
     ],
